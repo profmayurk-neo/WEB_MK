@@ -1,0 +1,15 @@
+<script>
+     let brands = ["Rajas", "Sonai", "Puma"];
+     //for of loop 
+     for(let record of brands){
+        console.log(record);
+        //.write() prints value on screen rather than console
+        document.write(`
+        <li>
+            ${record} </li>`);
+     }
+     //for in loop
+     for(let record in brands){
+        console.log(record);
+     }
+</script>

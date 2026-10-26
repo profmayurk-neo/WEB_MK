@@ -1,0 +1,229 @@
+DAY 3
+
+javascript--- Browser- Single Thread
+	|
+	|
+	|
+Angular (framework + Typescript)
+React Js
+React Native (mobile app)
+Node Js(server side/ system)
+
+MERN/MEAN
+
+# 1. The <script> Tag
+
+* <script>: An HTML tag used to embed or reference executable client-side JavaScript code within a webpage.
+
+# 2. The Curly Braces { } (Block Scope)
+
+* { ... }: Defines a block in JavaScript.
+* A block groups multiple statements together. 
+It creates a local boundary known as block scope for variables declared with modern keywords like let and const.
+
+# 3. Variable Declarations
+
+* let userName;:
+* let: A keyword used to declare a block-scoped variable.
+   * userName: The identifier (name) of the variable. Because it is inside the { } block, 
+it only exists inside that block. Trying to access it outside will throw a ReferenceError.
+* var userAge;:
+* var: An older keyword used to declare a variable.
+   * userAge: The identifier (name) of the variable. Unlike let, var ignores block scope. It is either globally scoped or function-scoped. Because it is not inside a function here, it leaks out of the { } block and is available globally.
+
+## 4. Code Comments
+
+* //console.log(userName);: The // symbols denote a single-line comment. The JavaScript engine completely ignores this line. If you were to uncomment it (remove the //), the program would crash with a ReferenceError because userName is not defined outside the block.
+
+## The Output Statement
+
+* console.log(userAge);:
+* console: A built-in global object that provides access to the browser's debugging console.
+   * .log(): A method (function) belonging to the console object that prints messages or variables to the console screen.
+   * Output: This line will successfully print undefined to your console. It prints undefined because var userAge was declared but never assigned a value (like userAge = 25;).
+
+------------------------------
+varivable with var keyword can redeclared multiple times
+varivable with let keyword can not redeclared 
+
+====================================
+
+Feature	var keyword	let keyword
+Redeclaration	Allowed. Declaring var userName; twice is perfectly valid. The engine simply ignores the second declaration.	Forbidden. Declaring let userAge; twice throws an immediate SyntaxError: Identifier 'userAge' has already been declared.
+Scope	Function/Global Scoped. It ignores blocks { } and leaks into the outer scope.	Block Scoped. It is strictly bound within the nearest curly braces { }.
+Hoisting Behavior	Hoisted and initialized as undefined. You can access it before its declaration line without crashing.	Hoisted but not initialized. It sits in a "Temporal Dead Zone" (TDZ). Accessing it early crashes the script.
+
+
+Why your snippet fails:
+
+1. The JavaScript engine reads the file.
+2. It sees var userName; twice and says, "That's fine."
+3. It sees let userAge; twice and immediately halts execution, throwing an error because you cannot declare the same let variable twice in the same scope.
+4. Because of this syntax error, console.log(userName); never even runs.
+------------------------------------
+
+no differece btn ' ' nad " "
+----
+both variables are changeble
+----------------
+script recap--
+{} block
+var is restricated
+let not
+var can be redeclared
+let cannot be redeclared
+const value are not allowed to change
+------------------------------------
+function
+math library
+
+Array
+push -- add at the end
+pop-- remove last value
+
+--------------------
+loops
+for -- of loop
+-- it iterates its values
+-for -- in loop
+it iterates index number
+----------------
+document object
+document is web page
+--------------
+for loop
+
+for each loop 
+
+binary search
+-----------------------------
+custom Object
+
+annonymous function
+without name
+stored fuction of value
+use it as value
+
+callback function
+its function its argument to pass in outer function
+
+how to write down message box
+ans: alert("error");
+alert box only for printing on screen
+
+confirm("Delete.....!");
+decision making box
+------------------------------
+webpage manipulation (dom structure)
+getElementById() // dom method
+getElementById().value) //dom property
+1.style manipulation
+2.content manipulation
+3. structure manipulation
+
+//is this a number or not
+console.log(isNaN(amount));
+
+----------------------------------------
+assignment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------
+
+SELECT *
+FROM emp
+ORDER BY RAND()
+LIMIT 1;
+
+select * from emp 
+order by rand()
+limit 1;
+//minimum sal using different way
+1.
+select * from emp 
+where sal= (select min(sal) from emp);
+
+2.
+SELECT *
+FROM emp
+ORDER BY sal ASC
+FETCH FIRST 1 ROW ONLY;
+
+3.
+SELECT *
+FROM emp
+ORDER BY sal ASC
+LIMIT 1;
+
+4.
+SELECT *
+FROM emp
+WHERE sal <= ALL (SELECT sal FROM emp);
+
+5.
+SELECT *
+FROM emp e
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM emp e2
+    WHERE e2.sal < e.sal
+);
+
+6.
+SELECT *
+FROM (
+    SELECT e.*,
+           DENSE_RANK() OVER (ORDER BY sal ASC) AS rnk
+    FROM emp e
+) x
+WHERE rnk = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

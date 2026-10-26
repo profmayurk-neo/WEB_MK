@@ -1,0 +1,32 @@
+<script>
+    let products=[{name:"Sukhoi", price:5000000,
+        path:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeauhWQGEollGx7wZNZavete06P0GxZ8pxuGr1EcTpeg&s=10"},
+        {name:"mig", price:4500000,
+        path:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgEbp3dlwq-blKL3ldyVcAzGmnx93NKcl4HG79KJrPqA&s"},
+        {name:"Rafal", price:6000000,
+        path:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwomDU90r8mfjvsBGeHsCuNflNQOOozewEIm-6BGCOhA&s=10"}]
+
+        for(let value of products){
+        console.log(value);
+
+        document.write(`
+    <div>
+    <img src="${value.path}" width=300 height=300/>
+    <h2>${value.price}$</h2>
+    <p>${value.name}</p>
+        </div>
+    `);
+     }
+</script>
+
+<style>
+div{
+    border: solid;
+    width: 300px;
+    text-align: center;
+    float: left;
+}
+div img{
+    width: 100%;
+}
+</style>
